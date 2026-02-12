@@ -1,0 +1,18 @@
+# Ignore everything that isn't whitelisted here
+*
+*.*
+
+# Whitelist
+!.gitignore
+!README.md
+!models/
+!models/sub/
+!models/sub/transformers/
+!models/sub/transformers/hammond/
+!models/sub/transformers/hammond/278x/
+!models/sub/transformers/hammond/278x/hammond_278x_wht_blk.subckt
+!models/sub/transformers/hammond/278x/hammond_278x_wht_gry.subckt
+!models/sym/
+!models/sym/transformers/
+!models/sym/transformers/HAMMOND_278X_WHT_BLK.asy
+!models/sym/transformers/HAMMOND_278X_WHT_GRY.asy
