@@ -6,7 +6,7 @@ performed. Measurement details are explained in the model subckt files.
 
 ## Models
 
-  Transformers
-  | Hammond 278X
-  | | 115V primary tap (wht-gry)
+  Transformers  
+  | Hammond 278X  
+  | | 115V primary tap (wht-gry)  
   | | 125V primary tap (wht-blk)

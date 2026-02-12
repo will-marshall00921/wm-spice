@@ -19,11 +19,11 @@
 *    to the free end of the resistor, where the signal generator also connects.
 * 5) Apply a sine wave of about 2 Vpp. The measurement will be repeated across
 *    frequencies but start at a frequency of about 50 Hz.
-* 6) Adjust the V/div on the o-scope for both channels such that you use about 
+* 6) Adjust the V/div on the o-scope for both channels such that you use about
 *    80% of the vertical space of the screen.
 * 7) Adjust the s/div to capture a reasonable number of periods of the generated
 *    waveform.
-* 8) Using the math channel, show channel 1 - channel 2. This is the voltage 
+* 8) Using the math channel, show channel 1 - channel 2. This is the voltage
 *    across the coil. Adjust the V/div similarly to the analog channels to
 *    maximize resolution.
 * 9) Ensure the signal appearing across the resistor is not saturated with
@@ -55,7 +55,7 @@
 * GRN1 - Green lead (6.3V secondary end lead)
 * GRNYEL - "GRN/YEL", green lead with yellow stripe, 6.3V secondary center tap
 * GRN2 - Green lead (6.3V secondary end lead), other end
-.SUBCKT HAMMOND_278X_WHT_BLK WHT BLK RED1 REDYEL RED2 YEL1 YELBLK YEL2 GRN1 
+.SUBCKT HAMMOND_278X_WHT_BLK WHT BLK RED1 REDYEL RED2 YEL1 YELBLK YEL2 GRN1
 + GRNYEL GRN2
 * The DCR of the primary
 .PARAM DCR_PRIM=1.7
@@ -96,7 +96,7 @@ L_RED_SEC_2 RED_COM_2 RED2 {L_RED_REDYEL}
 * accounts for a larger proportion of the total DCR than the winding does on
 * the heater coils.
 * The inductance is estimated using the total self inductance measured of the heater
-* coil. A low-voltage 60 Hz sinusoidal waveform is applied to the primary. The 
+* coil. A low-voltage 60 Hz sinusoidal waveform is applied to the primary. The
 * relative amplitude between the primary and measured heater secondary gives the
 * self inductance. With the estimation of the primary self-inductance from the
 * measurement, we can estimate the self-inductance of the half heater windings.
@@ -119,10 +119,5 @@ R_GRN_SEC_2 GRNYEL GRN_COM_2 {DCR_GRN_GRNYEL}
 * The bottom half the green secondary inductor
 L_GRN_SEC_2 GRN_COM_2 GRN2 {L_GRN_GRNYEL}
 * Making the inductors act like a transformer, with k=0.89 as measured
-K_RED_SEC1 L_PRIM L_RED_SEC_1 {K_SEC}
-K_RED_SEC2 L_PRIM L_RED_SEC_2 {K_SEC}
-K_YEL_SEC1 L_PRIM L_YEL_SEC_1 {K_SEC}
-K_YEL_SEC2 L_PRIM L_YEL_SEC_2 {K_SEC}
-K_GRN_SEC1 L_PRIM L_GRN_SEC_1 {K_SEC}
-K_GRN_SEC2 L_PRIM L_GRN_SEC_2 {K_SEC}
+K_TX L_PRIM L_RED_SEC_1 L_RED_SEC_2 L_YEL_SEC_1 L_YEL_SEC_2 L_GRN_SEC_1 L_GRN_SEC_2 {K_SEC}
 .ENDS HAMMOND_278X_WHT_BLK
